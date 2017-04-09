@@ -1,0 +1,19 @@
+h1 Listing factories
+
+table
+  thead
+    tr
+      th
+      th
+      th
+
+  tbody
+    - @factories.each do |factory|
+      tr
+        td = link_to 'Show', factory
+        td = link_to 'Edit', edit_factory_path(factory)
+        td = link_to 'Destroy', factory, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+= link_to 'New Factory', new_factory_path
