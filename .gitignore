@@ -1,0 +1,29 @@
+/target/
+/.settings/
+/.classpath
+/.project
+/logs/
+<<<<<<< HEAD
+.idea/
+.idea/workspace.xm
+.DS_Store
+=======
+# Eclipse project files
+.classpath
+.project
+.settings/
+
+
+# Intellij project files
+*.iml
+*.idea
+*.iws
+
+# maven
+target/
+logs/
+
+
+out/
+/tmp/
+/log/
