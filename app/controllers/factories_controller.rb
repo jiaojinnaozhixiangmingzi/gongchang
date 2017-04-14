@@ -68,7 +68,25 @@ class FactoriesController < ApplicationController
       if @factory.empty?
         format.json { render :json => {:data => "Login failed"}.to_json}
       else
+        first = @factory[0]
+        session['mobile'] = first.mobile
         format.json { render :json => {:data => "Login succ!"}.to_json}
+      end
+    end
+  end
+
+  def reset
+    # 测试时直接加个的mobile,测完要注释掉,要取session的mobile
+    mobile = 186
+    #mobile = session['mobile']
+    @factory = Factory.where(["mobile = ? and encrypted_password = ?",mobile, params[:old_encrypted_password]])
+    respond_to do |format|
+      if @factory.empty?
+        format.json { render :json => {:data => "Reset failed"}.to_json }
+      else
+        first = @factory[0]
+        first.update_attributes(:encrypted_password => params[:new_encrypted_password])
+        format.json { render :json => {:data => "Retset succ"}.to_json }
       end
     end
   end

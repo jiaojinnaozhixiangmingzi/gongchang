@@ -1083,3 +1083,73 @@ Processing by FactoriesController#login as JSON
 Completed 200 OK in 4ms (Views: 0.2ms | ActiveRecord: 0.6ms)
 
 
+Started POST "/factories/8/reset.json" for 127.0.0.1 at 2017-04-14 22:02:47 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (3.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by FactoriesController#reset as JSON
+  Parameters: {"mobile"=>"186", "old_encrypted_password"=>"[FILTERED]", "new_encrypted_password"=>"[FILTERED]", "id"=>"8"}
+Completed 500 Internal Server Error in 48ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `mobile' for #<FactoriesController:0x007fd1d8dd87e8>):
+  
+app/controllers/factories_controller.rb:82:in `reset'
+  Rendering /Users/Kafukaaa/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/Kafukaaa/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/Kafukaaa/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.3ms)
+  Rendering /Users/Kafukaaa/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/Kafukaaa/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /Users/Kafukaaa/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/Kafukaaa/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/Kafukaaa/.rvm/gems/ruby-2.2.2/gems/actionpack-5.0.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (121.5ms)
+Started POST "/factories/8/reset.json" for 127.0.0.1 at 2017-04-14 22:03:51 +0800
+Processing by FactoriesController#reset as JSON
+  Parameters: {"mobile"=>"186", "old_encrypted_password"=>"[FILTERED]", "new_encrypted_password"=>"[FILTERED]", "id"=>"8"}
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `factories` WHERE (mobile = '186' and encrypted_password = '111111')[0m
+Completed 200 OK in 10ms (Views: 0.1ms | ActiveRecord: 5.5ms)
+
+
+Started POST "/factories/8/reset.json" for 127.0.0.1 at 2017-04-14 22:05:53 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (2.6ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by FactoriesController#reset as JSON
+  Parameters: {"mobile"=>"186", "old_encrypted_password"=>"[FILTERED]", "new_encrypted_password"=>"[FILTERED]", "id"=>"8"}
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `factories` WHERE (mobile = '186' and encrypted_password = '111111')[0m
+Completed 200 OK in 13ms (Views: 0.1ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/factories/8/reset.json" for 127.0.0.1 at 2017-04-14 22:08:44 +0800
+Processing by FactoriesController#reset as JSON
+  Parameters: {"mobile"=>"186", "old_encrypted_password"=>"[FILTERED]", "new_encrypted_password"=>"[FILTERED]", "id"=>"8"}
+  [1m[35m (3.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `factories` WHERE (mobile = 186 and encrypted_password = '111111')[0m
+Completed 200 OK in 7ms (Views: 0.1ms | ActiveRecord: 4.5ms)
+
+
+Started POST "/factories/8/reset.json" for 127.0.0.1 at 2017-04-14 22:09:39 +0800
+Processing by FactoriesController#reset as JSON
+  Parameters: {"mobile"=>"186", "old_encrypted_password"=>"[FILTERED]", "new_encrypted_password"=>"[FILTERED]", "id"=>"8"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `factories` WHERE (mobile = 186 and encrypted_password = '1111111')[0m
+  [1m[36mFactory Load (0.3ms)[0m  [1m[34mSELECT `factories`.* FROM `factories` WHERE (mobile = 186 and encrypted_password = '1111111')[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.1ms)[0m  [1m[33mUPDATE `factories` SET `encrypted_password` = '1234562', `updated_at` = '2017-04-14 14:09:39' WHERE `factories`.`id` = 2[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 20ms (Views: 0.1ms | ActiveRecord: 7.1ms)
+
+
+Started POST "/factories/8/reset.json" for 127.0.0.1 at 2017-04-14 22:13:19 +0800
+Processing by FactoriesController#reset as JSON
+  Parameters: {"old_encrypted_password"=>"[FILTERED]", "new_encrypted_password"=>"[FILTERED]", "id"=>"8"}
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `factories` WHERE (mobile = 186 and encrypted_password = '1111111')[0m
+Completed 200 OK in 2ms (Views: 0.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/factories/8/reset.json" for 127.0.0.1 at 2017-04-14 22:13:26 +0800
+Processing by FactoriesController#reset as JSON
+  Parameters: {"old_encrypted_password"=>"[FILTERED]", "new_encrypted_password"=>"[FILTERED]", "id"=>"8"}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM `factories` WHERE (mobile = 186 and encrypted_password = '1234562')[0m
+  [1m[36mFactory Load (0.2ms)[0m  [1m[34mSELECT `factories`.* FROM `factories` WHERE (mobile = 186 and encrypted_password = '1234562')[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[33mUPDATE `factories` SET `encrypted_password` = '111111', `updated_at` = '2017-04-14 14:13:26' WHERE `factories`.`id` = 2[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 6ms (Views: 0.1ms | ActiveRecord: 3.1ms)
+
+

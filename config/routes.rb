@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   resources :factories do 
     member do 
       post :login
+      post :reset
+      post :email
     end
   end
 
