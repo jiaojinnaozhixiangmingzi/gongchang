@@ -45,11 +45,13 @@
     <script src="../node_modules/systemjs/dist/system.src.js"></script>
 
     <script src="../src/systemjs.config.js"></script>
+<!--
     <script>
         System.import('../src/main.js').catch(function (err) {
             console.error(err);
         });
     </script>
+-->
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
@@ -102,6 +104,7 @@
                         <input type="text" id="address" [(ngModel)]="address" class="form-control" placeholder="地址信息">
                     </div>
                     <br>
+<!--
                     <div class="input-group">
 
                         <input type="file" id="file" onchange="handleFiles(this.files)"/>  
@@ -110,6 +113,7 @@
                         
                         
                     </div>
+-->
                     <br>
                     <div class="box-footer" style="margin-top: 5%;">
                     <!-- <button type="button" class="btn btn-primary" >选择营业执照文件</button> -->
@@ -162,7 +166,7 @@
             var password = document.getElementById("password").value;
             var repassword = document.getElementById("password").value;
             var address = document.getElementById("password").value;
-            var filecontent = document.getElementById("filecontent").value;
+//            var filecontent = document.getElementById("filecontent").value;
             if (name == null || name == undefined || name == "") {
                 // alert("请输入姓名。")；
                 alert("请输入姓名或密码。");
@@ -175,10 +179,11 @@
             }else if (address == null || address == undefined || address == "") {
                 // alert("请输入姓名。")；
                 alert("请确认地址。"); 
-            }else if (filecontent == null || filecontent == undefined || filecontent == "") {
-                // alert("请输入姓名。")；
-                alert("请选择文件。");
             }
+//            else if (filecontent == null || filecontent == undefined || filecontent == "") {
+//                // alert("请输入姓名。")；
+//                alert("请选择文件。");
+//            }
             else{
                     window.location.replace("src/login.html");
                 }

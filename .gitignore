@@ -27,4 +27,3 @@ logs/
 out/
 /tmp/
 /log/*
-/public/node_modules/*
