@@ -19,7 +19,11 @@ var AppComponent = (function () {
         this.commentService.getComments(name, password).subscribe(function (comments) {
             _this.comments = comments;
             if (comments.data == "Login succ!") {
-                alert("终于他娘的成功了");
+                alert("登录成功，跳转至主页面");
+                window.location.href = "/src/showHome.html";
+            }
+            else {
+                alert("登录失败，请重新输入账号和密码！");
                 window.location.href = "/src/login.html";
             }
         }, //Bind to view
@@ -34,7 +38,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'form-input',
-        template: "<div class=\"box-body\" style=\"margin-top: 10%;\">\n                    <div class=\"input-group\">\n                        <span class=\"input-group-addon\">@</span>\n                        <input type=\"text\" [(ngModel)]=\"name\" class=\"form-control\" placeholder=\"\u7528\u6237\u540D\">\n                    </div>\n                    <br>\n                    <div class=\"input-group\">\n                        <span class=\"input-group-addon\">@</span>\n                        <input type=\"text\" [(ngModel)]=\"password\" class=\"form-control\" placeholder=\"\u5BC6\u7801\">\n                    </div>\n                    <br>\n\n                    <div class=\"box-body\">\n                        <button type=\"submit\" class=\"btn\" style=\"float: right;\">\u5FD8\u8BB0\u5BC6\u7801</button>\n                    </div>\n                    <div class=\"box-footer\" style=\"margin-top: 5%;\">\n                          <button type=\"button\" class=\"btn btn-primary\" (click)=\"onsubmit(name,password)\">\u767B\u5F55</button>\n\n                    </div>\n                    <!-- /input-group -->\n                </div>"
+        template: "<div class=\"box-body\" style=\"margin-top: 10%;\">\n                    <div class=\"input-group\">\n                        <span class=\"input-group-addon\">@</span>\n                        <input type=\"text\" [(ngModel)]=\"name\" class=\"form-control\" placeholder=\"\u7528\u6237\u540D\">\n                    </div>\n                    <br>\n                    <div class=\"input-group\">\n                        <span class=\"input-group-addon\">@</span>\n                        <input type=\"password\" [(ngModel)]=\"password\" class=\"form-control\" placeholder=\"\u5BC6\u7801\">\n                    </div>\n                    <br>\n\n                    <div class=\"box-body\">\n                        <button type=\"submit\" class=\"btn\" style=\"float: right;\">\u5FD8\u8BB0\u5BC6\u7801</button>\n                    </div>\n                    <div class=\"box-footer\" style=\"margin-top: 5%;\">\n                          <button type=\"button\" class=\"btn btn-primary\" (click)=\"onsubmit(name,password)\">\u767B\u5F55</button>\n\n                    </div>\n                    <!-- /input-group -->\n                </div>"
     }),
     __metadata("design:paramtypes", [app_service_js_1.CommentService])
 ], AppComponent);

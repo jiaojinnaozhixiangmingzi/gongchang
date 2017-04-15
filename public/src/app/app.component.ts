@@ -12,7 +12,7 @@ import {CommentService} from './app.service.js';
                     <br>
                     <div class="input-group">
                         <span class="input-group-addon">@</span>
-                        <input type="text" [(ngModel)]="password" class="form-control" placeholder="密码">
+                        <input type="password" [(ngModel)]="password" class="form-control" placeholder="密码">
                     </div>
                     <br>
 
@@ -36,10 +36,10 @@ export class AppComponent  {
              this.comments = comments;
              if (comments.data == "Login succ!") {
                 alert("登录成功，跳转至主页面");
-                window.location.href= "/src/login.html";
+                window.location.href= "/src/showHome.html";
              }else{
                 alert("登录失败，请重新输入账号和密码！");
-                window.location.href= "/src/showHome.html";
+                window.location.href= "/src/login.html";
              }
              }, //Bind to view
              err => {
