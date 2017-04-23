@@ -51,9 +51,11 @@
             console.error(err);
         });
     </script>
+
 </head>
 
 <body class="hold-transition skin-blue sidebar-mini">
+    <script src="../src/reset.js"></script>
     <div class="wrapper" style="height: auto;text-align: -webkit-center;">
 
         <header class="main-header">
@@ -76,29 +78,34 @@
 
         <!-- Content Wrapper. Contains page content -->
         <!-- Input addon -->
-        <div class="box box-info" style="width:30%;margin-top: 5%;height: 200px;margin-bottom: 5%;">
+        <div class="box box-info" style="width:30%;margin-top: 5%;height: 250px;margin-bottom: 5%;">
             <div class="box-header with-border">
                 <h1 class="box-title">密码重置</h1>
             </div>
-                <form-input>
+                <form>
 
                     <div class="input-group">
                         <span class="input-group-addon">@</span>
-                        <input type="text" [(ngModel)]="password" class="form-control" placeholder="新密码">
+                        <input type="text" id="old_encrypted_password"class="form-control" placeholder="旧密码">
                     </div>
                     <br>
                     <div class="input-group">
                         <span class="input-group-addon">@</span>
-                        <input type="text" [(ngModel)]="repassword" class="form-control" placeholder="确认密码">
+                        <input type="text" id="new_encrypted_password" class="form-control" placeholder="新密码">
+                    </div>
+                    <br>
+                    <div class="input-group">
+                        <span class="input-group-addon">@</span>
+                        <input type="text" id="renew_encrypted_password" class="form-control" placeholder="确认密码">
                     </div>
                     
                     <div class="box-footer" style="margin-top: 5%;">
-                          <button type="button" class="btn btn-primary" onclick="skipLogin()">确认</button>
+                          <button type="button" class="btn btn-primary" onclick="check()">确认</button>
 
                     </div>
 
                     <!-- /input-group -->
-                </form-input>
+                </form>
             <!-- /.box-body -->
         </div>
         <!-- /.box -->
@@ -120,11 +127,6 @@
     <!-- jQuery UI 1.11.4 -->
     <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.min.js"></script>
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
-        <script type="text/javascript">
-        function skipLogin(){
-            window.location.replace("src/login.html");
-        }
-    </script>
     <script>
         $.widget.bridge('uibutton', $.ui.button);
     </script>
@@ -133,11 +135,14 @@
     <!-- Morris.js charts -->
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>-->
     <script src="../src/plugins/morris/morris.min.js"></script>
+    
+
     <!-- Sparkline -->
     <script src="../src/plugins/sparkline/jquery.sparkline.min.js"></script>
     <!-- jvectormap -->
     <script src="../src/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js"></script>
     <script src="../src/plugins/jvectormap/jquery-jvectormap-world-mill-en.js"></script>
+    <script src="../src/plugins/ckeditor/adapters/jquery.js"></script>
     <!-- jQuery Knob Chart -->
     <script src="../src/plugins/knob/jquery.knob.js"></script>
     <!-- daterangepicker -->

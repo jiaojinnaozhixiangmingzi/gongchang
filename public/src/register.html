@@ -86,12 +86,12 @@
 
                     <div class="input-group">
                         <span class="input-group-addon">@</span>
-                        <input type="text" id="name" [(ngModel)]="name" class="form-control" placeholder="用户名">
+                        <input type="text" id="name" class="form-control" placeholder="用户名">
                     </div>
                     <br>
                     <div class="input-group">
                         <span class="input-group-addon">@</span>
-                        <input type="text" id="password" [(ngModel)]="password" class="form-control" placeholder="密码">
+                        <input type="text" id="password" class="form-control" placeholder="密码">
                     </div>
                     <br>
                     <div class="input-group">
@@ -117,7 +117,7 @@
                     <br>
                     <div class="box-footer" style="margin-top: 5%;">
                     <!-- <button type="button" class="btn btn-primary" >选择营业执照文件</button> -->
-                          <button type="button" class="btn btn-primary" onclick="skipLogin()">注册</button>
+                          <button type="button" class="btn btn-primary" onclick="register()">注册</button>
 
                     </div>
 
@@ -161,6 +161,31 @@
          reader.readAsText(file);  
      }  
     }  
+        function register(){
+            var old_encrypted_password = document.getElementById("old_encrypted_password").value;
+            var new_encrypted_password=document.getElementById("new_encrypted_password").value;
+            //alert(old_encrypted_password+new_encrypted_password);
+             var url = "http://localhost:3000/factories/8/reset?old_encrypted_password="+old_encrypted_password+"&&new_encrypted_password="+new_encrypted_password;
+             //alert(url);
+
+              $.ajax({
+                type:"POST",
+                url: url,
+                data:{},
+                dataType: "json",
+                success: function (data) {
+                alert("hhhhhh");
+                if(data!=null){
+                window.location.href="src/showHome.html";
+                }
+
+                },
+                error: function(){
+                alert("您输入的账号密码有误，请重新输入");
+                }
+             });
+
+        }
         function skipLogin(){
             var name = document.getElementById("name").value;
             var password = document.getElementById("password").value;

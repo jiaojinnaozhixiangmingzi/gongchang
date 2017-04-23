@@ -10,7 +10,7 @@ default: &default
   encoding: utf8
   database: washing
   username: root
-  password: 303515
+  password: captain
   pool: 5
 
 development:
