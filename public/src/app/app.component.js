@@ -20,7 +20,7 @@ var AppComponent = (function () {
             _this.comments = comments;
             if (comments.data == "Login succ!") {
                 alert("登录成功，跳转至主页面");
-                window.location.href = "/src/showHome.html";
+                window.location.href = "/showHome.html";
             }
             else {
                 alert("登录失败，请重新输入账号和密码！");
