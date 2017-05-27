@@ -93,3 +93,63 @@ function load() {
     }
 })}
 
+function change() {
+    $('#datatable2').dataTable().fnClearTable();
+    $('#datatable2').dataTable().fnDestroy();
+
+    
+    var orderId = $('#oderid').html();
+    console.log(orderId);
+    var val = $('#change').val();
+    if (val == "点击接收") {
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:3001/orders/createProductItem.json", //接口名字，根据状态和节点id获取任务列表
+            dataType: "json",
+            data: {
+                orderId: orderId
+            },
+            success: function (data) {
+                if (data.data == "Succ") {
+                    alert(data.data);
+                }
+            },
+            error: function (d) {}
+        });
+    }
+    else if (val == "已接收") {
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:3001/orders/finishCleaning.json", //接口名字，根据状态和节点id获取任务列表
+            dataType: "json",
+            data: {
+                orderId: orderId
+            },
+            success: function (data) {
+                if (data.data == "Succ") {
+                    alert(data.data);
+                }
+            },
+            error: function (d) {}
+        });
+    } else if (val == "已洗完") {
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:8080/api/node/getTaskByNode", //接口名字，根据状态和节点id获取任务列表
+            dataType: "json",
+             data: {
+                orderId: orderId
+            },
+            success: function (data) {
+                if (data.data == "Succ") {
+                    alert(data.data);
+                }
+            },
+            error: function (d) {}
+        });
+    } else if (val == "已送出") {
+        alert("又完成一单好开心呀");
+    }
+    load();
+}
+
